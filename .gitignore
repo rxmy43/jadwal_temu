@@ -1,0 +1,31 @@
+# Ignore Composer's vendor directory
+/vendor/
+
+# Ignore PHPStorm files
+/.idea/
+
+# Ignore environment-specific files
+/.env
+
+# Ignore log files
+/*.log
+
+# Ignore session files
+/sessions/
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore composer.lock file
+composer.lock
+
+# Ignore any compiled PHP files
+*.phpc
+
+# Ignore SQLite database files
+/*.sqlite
+
+# Ignore npm dependency directories
+/node_modules/
+/bower_components/
