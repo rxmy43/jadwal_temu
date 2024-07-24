@@ -1,9 +1,9 @@
 <nav class="navbar">
     <div class="logo">
-        <img src="images/logo.png" alt="">
+        <img src="images/pln.jpg" alt="">
         <h1>PT.PLN(Persero) UP2B Kaltimra</h1>
     </div>
-    <a class="logout-button" href="#" onclick="document.getElementById('logout_modal').style.display='block'">Logout
+    <a class="logout-button" href="#" onclick="document.getElementById('logout_modal').style.display='block'">  <span>Logout</span>
         <i class="fa-solid fa-right-from-bracket"></i>
     </a>
 </nav>

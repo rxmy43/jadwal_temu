@@ -7,7 +7,7 @@
     checkRole($conn, "Admin", getUniqueId());
 
     $pageTitle = "Karyawan";
-    $cssFiles = ["css/dashboard.css", "css/jadwal_janji.css", "css/modal.css", "css/alert.css"];
+    $cssFiles = ["css/dashboard.css", "css/jadwal_janji.css", "css/modal.css", "css/alert.css", "css/sidebar.css", "css/navbar.css"];
     $additionalLinks = ['<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />'];
 
     include "./layouts/header.php";
@@ -19,13 +19,13 @@
     <?php include "./partials/_sidebar.php" ?>
     <!-- Sidebar -->
     <div>
-        <h1 style="margin-left: 260px; margin-top: 40px; font-weight: bold; font-size: 40px">Data Karyawan</h1>
-        <div style="width: 1000px; display: flex; align-items: center; justify-content: space-between; margin-left: 260px; margin-top: 10px;">
+        <h1 class="j" style="">Data Karyawan</h1>
+        <div class="data" style="">
             <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
                 <button data-id="tambahDataBtn" style="width: 200px; height: 30px; border-radius: 5px;cursor: pointer;" onclick="openModal('myModal')"><i class="fa-solid fa-plus"></i>Tambah Data</button>
             </div>
         </div>
-        <div style="width : 1000px; display: flex; align-items: center; justify-content: space-between; margin-left: 260px; margin-top: 10px ">
+        <div class="s" style=" ">
             <div style=" display: flex; gap: 10px; align-items: center; margin-top: 10px">
                 <p style="font-weight: bold; font-size: 20px; ">show</p>
                 <select name="show" id="show" style="width: 60px; height: 30px; border-radius: 5px">
@@ -37,7 +37,7 @@
                 <p style="font-weight: bold; font-size: 20px; ">entries</p>
             </div>
             <div>
-                <input type="text" id="search" name="search" placeholder="Cari..." style="width: 200px; height: 30px; border-radius: 5px; margin-left: 260px; margin-top: 10px; padding-left: 10px">
+                <input type="text" id="search" name="search" placeholder="Cari..." class="se" style="">
             </div>
         </div>
     </div>
@@ -85,7 +85,7 @@
         <div class="modal-content">
         <span class="close" onclick="this.parentElement.parentElement.style.display='none';">&times;</span>
             <h2>Edit Data Karyawan</h2>
-            <div class="alert" style="display: none;">
+            <div class="alert alert-dashboard" style="display: none;">
                 <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
                 <strong id="message"></strong>
             </div>

@@ -44,7 +44,11 @@
     }
 ?>
 
-<div class="sidebar">
+<div class="hamburger-menu" id="hamburger-menu">
+    <i class="fa fa-bars"></i>
+</div>
+
+<div class="sidebar" id="sidebar">
     <div class="profile">
         <div class="user-icon">
             <img src="./images/no-user.png" alt="">
@@ -84,3 +88,10 @@
         </div>
     </ul>
 </div>
+
+<script>
+    document.getElementById('hamburger-menu').addEventListener('click', function() {
+        var sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('show');
+    });
+</script>

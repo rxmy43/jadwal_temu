@@ -1,280 +1,277 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 .table-container {
-    width: 75%;
-    max-width: 1200px;
-    margin: auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    margin-left: 260px;
-    margin-top: 20px;
-    overflow-x: auto; /* Tambahkan ini untuk scroll horizontal */
+  width: 75%;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-left: 260px;
+  margin-top: 20px;
+  overflow-x: auto; /* Tambahkan ini untuk scroll horizontal */
 }
 
 .styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: #ffffff;
-    min-width: 800px; /* Tentukan lebar minimum agar tabel tidak terlalu kecil */
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  min-width: 800px; /* Tentukan lebar minimum agar tabel tidak terlalu kecil */
 }
 
 .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
 }
 
 .styled-table th,
 .styled-table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #dddddd;
-    word-wrap: normal;
+  padding: 12px 15px;
+  border-bottom: 1px solid #dddddd;
+  word-wrap: normal;
 }
 
 .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #dddddd;
 }
 
 .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #009879;
 }
 
 .styled-table tbody tr:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .styled-table td img {
-    border-radius: 5px;
-    max-width: 50px;
-    height: auto;
+  border-radius: 5px;
+  max-width: 50px;
+  height: auto;
 }
 
 .styled-table button.decline,
 #confirm_modal button.decline {
-    background-color: #ff0000;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #ff0000;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .styled-table button.decline:hover,
 #confirm_modal button.decline:hover {
-    background-color: #cc0000;
+  background-color: #cc0000;
 }
 
 .styled-table button.warning,
 #confirm_modal button.warning {
-    background-color: #ffcc00;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+  background-color: #ffcc00;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .styled-table button.warning:hover,
 #confirm_modal button.warning:hover {
-    background-color: #cc9900;
+  background-color: #cc9900;
 }
 
 .styled-table button,
 #confirm_modal button {
-    background-color: #009879;
-    color: #ffffff;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #009879;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .styled-table button:hover,
 #confirm_modal button:hover {
-    background-color: #007a63;
+  background-color: #007a63;
 }
 
 .menu.active {
-    background-color: #3abef9;
-    color: #ffffff;
+  background-color: #3abef9;
+  color: #ffffff;
 }
 
 /* Paginator styling */
 .pagination {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-    list-style-type: none;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  list-style-type: none;
 }
 
 .pagination li {
-    display: inline;
-    margin: 0 5px;
+  display: inline;
+  margin: 0 5px;
 }
 
 .pagination a {
-    color: #009879;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
-    border: 1px solid #dddddd;
-    border-radius: 5px;
+  color: #009879;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
 }
 
 .pagination a.active {
-    background-color: #009879;
-    color: white;
-    border: 1px solid #009879;
+  background-color: #009879;
+  color: white;
+  border: 1px solid #009879;
 }
 
 .pagination a:hover:not(.active) {
-    background-color: #dddddd;
-    color: #009879;
+  background-color: #dddddd;
+  color: #009879;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
+}
+
+.j {
+  margin-left: 260px;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 40px;
+}
+.s {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 260px;
+  margin-top: 10px;
+}
+.se {
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 530px;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+/* //css karyawan.php */
+.data {
+  width: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 260px;
+  margin-top: 10px;
 }
 
 #confirm_modal #cancel_button {
-    background-color: #f1f1f1;
-    color: #222;
+  background-color: #f1f1f1;
+  color: #222;
 }
 
 /* Responsive styling */
 @media (max-width: 768px) {
-    .styled-table thead {
-        display: none;
-    }
+  .j {
+    margin-left: 15px;
+  }
+  .s {
+    margin-left: 15px;
+  }
 
-    .styled-table,
-    .styled-table tbody,
-    .styled-table tr,
-    .styled-table td {
-        display: block;
-        width: 100%;
-    }
+  .table-container {
+    margin-left: 15px;
+    width: 95%;
+  }
+  .se {
+    margin-left: 15px;
+    width: 100px;
+  }
+  .pagination {
+    margin-left: 15px;
+  }
+  .data {
+    margin-left: 15px;
+    width: 95%;
+  }
 
-    .styled-table tr {
-        margin-bottom: 15px;
-    }
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 
-    .styled-table td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-        border-bottom: none;
-        border-right: 1px solid #dddddd;
-    }
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+  }
 
-    .styled-table td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-        background-color: #f3f3f3;
-        border-right: 1px solid #dddddd;
-    }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
 
-    .styled-table td:last-child {
-        border-bottom: 1px solid #dddddd;
-    }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
-    .styled-table td img {
-        max-width: 50px;
-        height: auto;
-    }
+  .modal input,
+  .modal select {
+    width: calc(100% - 22px);
+    padding: 10px !important;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
 
-    .styled-table button {
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: 5px;
-    }
+  .modal button {
+    width: 100%;
+    background-color: #009879;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    .pagination {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .pagination li {
-        margin-bottom: 5px;
-    }
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgb(0, 0, 0);
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-content {
-        background-color: #fefefe;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 600px;
-        border-radius: 10px;
-    }
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-    .modal input,
-    .modal select {
-        width: calc(100% - 22px);
-        padding: 10px !important;
-        margin: 5px 0 20px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-
-    .modal button {
-        width: 100%;
-        background-color: #009879;
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .modal button:hover {
-        background-color: #007a63;
-    }
+  .modal button:hover {
+    background-color: #007a63;
+  }
 }

@@ -7,7 +7,7 @@
     checkAuth();
 
     $pageTitle = "Dashboard";
-    $cssFiles = ["css/dashboard.css", "css/jadwal_janji.css", "/css/modal.css"];
+    $cssFiles = ["css/dashboard.css", "css/jadwal_janji.css", "css/sidebar.css", "css/navbar.css"];
     $additionalLinks = ['<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />'];
 
     include "./layouts/header.php";
@@ -46,7 +46,7 @@
                         </div>
                         <div class="card-title">Jadwal janji temu</div>
                     </div>
-                    <div style="margin-top: 2rem;">
+                    <div style=" " class="refresh">
                         <i id="refreshButton" class="fa-solid fa-arrows-rotate refresh-button"></i>
                     </div>
                 </div>
