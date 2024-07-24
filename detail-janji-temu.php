@@ -52,8 +52,8 @@
 
             <div class="form-row">
                 <div class="form-group-left">
-                    <label for="jam">Jam Janji</label>
-                    <input type="time" id="jam" name="jam" value="<?= $row['jam']; ?>">
+                    <label for="jam_janjis">Jam Janji</label>
+                    <input type="time" id="jam_janji" name="jam_janji" value="<?= $row['jam_janji']; ?>">
                 </div>
 
                 <div class="form-group-right">

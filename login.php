@@ -10,11 +10,11 @@
             <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
             <strong id="alert-message"></strong>
         </div>
-        <input type="checkbox" id="chk" aria-hidden="true">
+        <!-- <input type="checkbox" id="chk" aria-hidden="true"> -->
         <div class="login">
             <form action="" method="POST" class="form" id="admin_login_form">
                 <div class="img">
-                    <img src="images/book.jpg" alt="">
+                    <img src="./images/book.jpg" alt="">
                 </div>
                 <label for="chk" aria-hidden="true">Log in</label>
                 <div class="input-container">
@@ -28,7 +28,7 @@
             </form>
         </div>
 
-        <div class="register">
+        <!-- <div class="register">
             <form action="" method="POST" class="form" id="admin_register_form">
                 <label for="chk" aria-hidden="true">Register</label>
                 <input type="hidden" name="register_type" value="admin">
@@ -53,10 +53,10 @@
                 </div>
                 <button type="submit">Register</button>
             </form>
-        </div>
+        </div> -->
     </div>
 
-    <script src="./js/auth.js"></script>
+    <script src="./js/login.js"></script>
     <script src="./js/form_util.js"></script>
 </body>
 

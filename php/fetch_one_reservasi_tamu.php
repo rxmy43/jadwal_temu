@@ -10,7 +10,7 @@ $id = $conn->escape_string($_POST['id']);
 $jenis = $conn->escape_string($_POST['jenis']);
 
 $query = $conn->query("SELECT 
-                            rt.*,,
+                            rt.*,
                             k.id AS karyawan_id,
                             k.nama_karyawan,
                             k.nomor_telepon AS karyawan_no
@@ -20,7 +20,7 @@ $query = $conn->query("SELECT
                             karyawan k ON rt.karyawan_id = k.id
                         WHERE
                             rt.id = $id
-                        AND rt.jenis_reservasi = $jenis");
+                        AND rt.jenis_reservasi = '$jenis'");
 
 $row = $query->fetch_assoc();
 

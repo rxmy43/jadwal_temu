@@ -3,10 +3,6 @@
 session_start();
 include_once "./config.php";
 
-if (isset($_SESSION['unique_id'])) {
-    header("location: /dashboard");
-}
-
 $full_name = mysqli_real_escape_string($conn, $_POST['register_full_name']);
 $email = mysqli_real_escape_string($conn, $_POST['register_email']);
 $password = mysqli_real_escape_string($conn, $_POST['register_password']);
@@ -17,36 +13,36 @@ $phone = mysqli_real_escape_string($conn, $_POST['register_phone']);
 
 if (empty($full_name)) {
     echo "Nama Lengkap harus diisi";
-    return;
+    exit;
 }
 if (empty($email)) {
     echo "Email harus diisi";
-    return;
+    exit;
 }
 if (empty($password)) {
     echo "Password harus diisi";
-    return;
+    exit;
 }
 
 if (empty($nip)) {
     echo "Nip harus diisi";
-    return;
+    exit;
 }
 
 if (empty($phone)) {
     echo "Nomor telepon harus diisi";
-    return;
+    exit;
 }
 
 if ($register_type != "admin" && $register_type != "karyawan" && $register_type != "petugas") {
     echo "invalid register type";
-    return;
+    exit;
 }
 
 $email = filter_var($email, FILTER_SANITIZE_EMAIL);
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo "Email tidak valid";
-    return;
+    exit;
 }
 
 $checkEmail = mysqli_query($conn, "SELECT 'Admin' AS user_type, email
@@ -62,7 +58,7 @@ $checkEmail = mysqli_query($conn, "SELECT 'Admin' AS user_type, email
                                     WHERE email = '$email'");
 if (mysqli_num_rows($checkEmail) > 0) {
     echo "Email sudah ada";
-    return;
+    exit;
 }
 
 $checkUsername = mysqli_query($conn, "SELECT 'Admin' AS user_type
@@ -94,4 +90,4 @@ $insertStmt->execute();
 $_SESSION['unique_id'] = $unique_id;
 
 echo "Register berhasil.";
-return;
+exit;

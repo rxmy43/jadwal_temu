@@ -5,7 +5,7 @@
 /.idea/
 
 # Ignore environment-specific files
-/.env
+# /.env
 
 # Ignore log files
 /*.log

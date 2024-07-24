@@ -44,6 +44,9 @@ const sendAuth = (isLogin) => {
     };
 
     const formData = new FormData(form);
+
+    if (!isLogin) formData.append('register_type', 'admin');
+
     xhr.send(formData);
 };
 

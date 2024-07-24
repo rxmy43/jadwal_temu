@@ -253,6 +253,11 @@ function sendWa(id) {
             jenis: 'janji_temu',
         },
         success: function (response) {
+            var namaKaryawan = response.nama_karyawan;
+            var namaTamu = response.nama_tamu;
+            var tanggal = response.tanggal;
+            var jam = response.jam_janji;
+            var keperluan = response.keperluan;
             var phoneNumber = response.nomor_telepon_karyawan;
             if (phoneNumber.startsWith('08')) {
                 phoneNumber = '+62' + phoneNumber.substring(1);
@@ -264,7 +269,7 @@ function sendWa(id) {
                 phoneNumber +
                 '?text=' +
                 encodeURIComponent(message);
-            window.location.href = whatsappUrl;
+            window.open(whatsappUrl);
         },
         error: function (e) {
             console.error(e);
@@ -328,10 +333,15 @@ function renderNotFoundData(colspan) {
 }
 
 function appointmentApproval(id, isApprove) {
-    $('#confirm_modal #confirm_button, #confirm_modal #cancel_button').prop(
-        'disabled',
-        true
-    );
+    if (isApprove) {
+        $('#confirm_modal #confirm_button').text('Loading...');
+    } else {
+        $('#confirm_modal #cancel_button').text('Loading...');
+    }
+
+    $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+        .prop('disabled', true)
+        .css('cursor', 'wait');
     $.ajax({
         url: '/php/approval_jadwal_temu.php',
         type: 'POST',
@@ -376,13 +386,29 @@ function appointmentApproval(id, isApprove) {
             // }
         },
         error: function () {
-            $('#confirm_button, #cancel_button').prop('disabled', false);
+            $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+                .prop('disabled', false)
+                .css('cursor', 'default');
+            if (isApprove) {
+                $('#confirm_modal #confirm_button').text('Setujui');
+            } else {
+                $('#confirm_modal #cancel_button').text('Tolak');
+            }
             $('.alert').css('display', 'block');
             $('.alert').addClass('failure');
             $('.alert').removeClass('success');
             $('.alert #message').text('Approval failed');
         },
     });
+
+    $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+        .prop('disabled', false)
+        .css('cursor', 'default');
+    if (isApprove) {
+        $('#confirm_modal #confirm_button').text('Setujui');
+    } else {
+        $('#confirm_modal #cancel_button').text('Tolak');
+    }
 }
 
 // Initial load and event listeners

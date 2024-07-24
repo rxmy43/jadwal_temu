@@ -47,7 +47,14 @@ function confirmationModal(button, apprStatus) {
 }
 
 function appointmentApproval(id, isApprove) {
-    $('#confirm_button, #cancel_button').prop('disabled', true);
+    $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+        .prop('disabled', true)
+        .css('cursor', 'progress');
+    if (isApprove) {
+        $('#confirm_modal #confirm_button').text('Loading...');
+    } else {
+        $('#confirm_modal #cancel_button').text('Loading...');
+    }
     $.ajax({
         url: '/php/approval_jadwal_temu.php',
         type: 'POST',
@@ -64,6 +71,11 @@ function appointmentApproval(id, isApprove) {
             $('.alert').removeClass('failure');
             $('.alert #message').text(response.message);
             $('#confirm_modal').css('display', 'none');
+            if (isApprove) {
+                $('#confirm_modal #confirm_button').text('Setujui');
+            } else {
+                $('#confirm_modal #cancel_button').text('Tolak');
+            }
 
             setTimeout(() => {
                 window.location.href = '/jadwal_janji.php';
@@ -91,11 +103,22 @@ function appointmentApproval(id, isApprove) {
             // }
         },
         error: function () {
-            $('#confirm_button, #cancel_button').prop('disabled', false);
+            $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+                .prop('disabled', false)
+                .css('cursor', 'default');
+            if (isApprove) {
+                $('#confirm_modal #confirm_button').text('Setujui');
+            } else {
+                $('#confirm_modal #cancel_button').text('Tolak');
+            }
             $('.alert').css('display', 'block');
             $('.alert').addClass('failure');
             $('.alert').removeClass('success');
             $('.alert #message').text('Approval failed');
         },
     });
+
+    $('#confirm_modal #confirm_button, #confirm_modal #cancel_button')
+        .prop('disabled', false)
+        .css('cursor', 'default');
 }
